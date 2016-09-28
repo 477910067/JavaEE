@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="ture" />
+
+	<package name="default" extends="struts-default" namespace="/" strict-method-invocation="false">
+		<!-- Struts2.5使用*通配符，需要加一句话 -->
+		<action name="user_*" class="cn.qdgxy.user.action.LoginAction"
+			method="{1}">
+			<result name="input">/login.jsp</result>
+			<result name="login_success">/msg.jsp</result>
+			<result name="regist_success">/msg.jsp</result>
+		</action>
+	</package>
+</struts>  
